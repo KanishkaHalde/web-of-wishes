@@ -3,11 +3,14 @@
 
 <head>
 
-    <title>Happy Birthday</title>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday</title>
+
+    <!-- IMPORTANT -->
+    <base href="/templates/birthday/">
 
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -27,6 +30,7 @@
     </button>
 
     <!-- Accept Gift Screen -->
+
     <div id="acceptGiftPage" style="display:none;">
 
         <h1 id="acceptHeading">PLEASE ACCEPT THE GIFT</h1>
@@ -34,8 +38,11 @@
         <img src="assets/sticker1.png" id="acceptSticker">
 
         <div id="acceptButtons">
+
             <button onclick="acceptGift()">YES</button>
+
             <button onclick="rejectGift()">NO</button>
+
         </div>
 
     </div>
@@ -65,7 +72,12 @@
     </div>
 
     <div id="cardContainer" style="display:none;">
-        <img id="cardImage" src="assets/close_card.png" onclick="openCard()">
+
+        <img
+            id="cardImage"
+            src="assets/close_card.png"
+            onclick="openCard()">
+
     </div>
 
     <!-- MUSIC -->
@@ -81,23 +93,31 @@
             <div id="songInfo">
 
                 <div id="songTitle">
+
                     I Think They Call This Love
+
                 </div>
 
                 <div id="artistName">
+
                     Matthew Ifield
+
                 </div>
 
             </div>
 
             <button id="playBtn" onclick="toggleMusic()">
+
                 ▶
+
             </button>
 
         </div>
 
         <audio id="birthdaySong">
+
             <source src="assets/love.mp3" type="audio/mpeg">
+
         </audio>
 
     </div>
@@ -105,23 +125,24 @@
     <img id="sideImage" src="assets/imggg.png">
 
     <button id="backBtn" onclick="goBack()">
+
         ← Back
+
     </button>
 
+</div>
 
+<!-- Libraries -->
 
-<!-- External Library -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-<!-- Your JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="supabase/config.js"></script>
+<!-- IMPORTANT -->
+<script src="/supabase/config.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
+<!-- Birthday Script -->
 <script src="js/script.js"></script>
 
 </body>
-
 </html>
