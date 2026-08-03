@@ -1,0 +1,235 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f5f7fb;
+    padding:40px;
+
+}
+
+.container{
+
+    max-width:1300px;
+    margin:auto;
+
+}
+
+.header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    gap:20px;
+
+}
+
+.header h1{
+
+    color:#5b21b6;
+    font-size:40px;
+
+}
+
+.newBtn{
+
+    text-decoration:none;
+    background:#6d28d9;
+    color:white;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.newBtn:hover{
+
+    background:#5b21b6;
+
+}
+
+.searchBox{
+
+    margin-bottom:25px;
+
+}
+
+.searchBox input{
+
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:white;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    font-size:16px;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+thead{
+
+    background:#6d28d9;
+    color:white;
+
+}
+
+thead th{
+
+    padding:18px;
+    text-align:left;
+    font-weight:600;
+    font-size:15px;
+
+}
+
+tbody td{
+
+    padding:18px;
+    border-bottom:1px solid #f1f1f1;
+    vertical-align:middle;
+
+}
+
+tbody tr:hover{
+
+    background:#faf7ff;
+
+}
+
+.actions{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.actions button{
+
+    border:none;
+    outline:none;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:500;
+
+}
+
+.view{
+
+    background:#3b82f6;
+
+}
+
+.copy{
+
+    background:#10b981;
+
+}
+
+.delete{
+
+    background:#ef4444;
+
+}
+
+.actions button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.empty{
+
+    text-align:center;
+    padding:60px;
+    color:#777;
+    font-size:18px;
+
+}
+
+.status{
+
+    background:#ede9fe;
+    color:#5b21b6;
+    padding:6px 14px;
+    border-radius:20px;
+    display:inline-block;
+    font-size:14px;
+    font-weight:600;
+
+}
+
+.link{
+
+    color:#6d28d9;
+    text-decoration:none;
+    font-weight:600;
+
+}
+
+.link:hover{
+
+    text-decoration:underline;
+
+}
+
+@media(max-width:900px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    .header{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    table{
+
+        display:block;
+        overflow-x:auto;
+
+    }
+
+    .actions{
+
+        flex-wrap:wrap;
+
+    }
+
+}
+.qr{
+
+    background:#f59e0b;
+
+}
+
+.qr:hover{
+
+    opacity:.9;
+
+}

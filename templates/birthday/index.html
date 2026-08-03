@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Happy Birthday</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="page" id="page">
+
+    <button class="candle-btn" id="candleBtn" onclick="changePage()">
+        <span class="wind">≋</span>
+        <span id="btnText">Blow the Candle</span>
+    </button>
+
+    <!-- Accept Gift Screen -->
+    <div id="acceptGiftPage" style="display:none;">
+
+        <h1 id="acceptHeading">PLEASE ACCEPT THE GIFT</h1>
+
+        <img src="assets/sticker1.png" id="acceptSticker">
+
+        <div id="acceptButtons">
+            <button onclick="acceptGift()">YES</button>
+            <button onclick="rejectGift()">NO</button>
+        </div>
+
+    </div>
+
+    <h1 id="giftHeading">Choose Your Gifts</h1>
+
+    <div class="gifts" id="giftsContainer">
+
+        <img
+            src="assets/gift11.png"
+            class="gift"
+            id="gift1"
+            onclick="expandGift1()">
+
+        <img
+            src="assets/gift22.png"
+            class="gift"
+            id="gift2"
+            onclick="expandGift2()">
+
+        <img
+            src="assets/gift333.png"
+            class="gift"
+            id="gift3"
+            onclick="expandGift3()">
+
+    </div>
+
+    <div id="cardContainer" style="display:none;">
+        <img id="cardImage" src="assets/close_card.png" onclick="openCard()">
+    </div>
+
+    <!-- MUSIC -->
+
+    <div id="musicSection" style="display:none;">
+
+        <img src="assets/music_card.png" id="musicCard">
+
+        <div id="spotifyCard">
+
+            <img src="assets/album_cover.png" id="albumCover">
+
+            <div id="songInfo">
+
+                <div id="songTitle">
+                    I Think They Call This Love
+                </div>
+
+                <div id="artistName">
+                    Matthew Ifield
+                </div>
+
+            </div>
+
+            <button id="playBtn" onclick="toggleMusic()">
+                ▶
+            </button>
+
+        </div>
+
+        <audio id="birthdaySong">
+            <source src="assets/love.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+
+    <img id="sideImage" src="assets/imggg.png">
+
+    <button id="backBtn" onclick="goBack()">
+        ← Back
+    </button>
+
+
+
+<!-- External Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<!-- Your JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase/config.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

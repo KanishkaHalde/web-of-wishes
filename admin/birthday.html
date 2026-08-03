@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Generator</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Left Panel -->
+    <div class="left">
+
+        <h1>🎂 Birthday Generator</h1>
+<div class="input-group">
+
+    <label>Website URL Name</label>
+
+    <input
+        type="text"
+        id="slug"
+        placeholder="happy-birthday-shambhavi">
+
+</div>
+        <div class="input-group">
+
+            <label>Letter Background</label>
+
+            <input
+                type="file"
+                id="letterBg"
+                accept="image/*">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Song Name</label>
+
+            <input
+                type="text"
+                id="songName"
+                placeholder="Perfect">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Artist Name</label>
+
+            <input
+                type="text"
+                id="artistName"
+                placeholder="Ed Sheeran">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Album Cover</label>
+
+            <input
+                type="file"
+                id="cover"
+                accept="image/*">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Song (MP3)</label>
+
+            <input
+                type="file"
+                id="song"
+                accept=".mp3">
+
+        </div>
+
+        <button
+            class="generate"
+            id="generateBtn">
+
+            🚀 Generate Website
+
+        </button>
+
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right">
+
+        <h2>Live Preview</h2>
+
+        <div class="preview-card">
+
+            <img
+                id="coverPreview"
+                src="https://placehold.co/150x150?text=Cover"
+                alt="Album Cover">
+
+            <h3 id="previewSong">
+                Song Name
+            </h3>
+
+            <p id="previewArtist">
+                Artist Name
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase/config.js"></script>
+<script src="../js/admin.js"></script>
+
+</body>
+</html>

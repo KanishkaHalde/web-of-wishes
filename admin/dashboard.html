@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Dashboard</title>
+
+    <link rel="stylesheet" href="../css/dashboard-table.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>🎂 Birthday Dashboard</h1>
+
+        <a href="birthday.html" class="newBtn">
+            + New Website
+        </a>
+
+    </div>
+
+    <div class="searchBox">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search website by slug...">
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Slug</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Website</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tableBody">
+
+            <!-- Websites loaded here -->
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../supabase/config.js"></script>
+
+<script src="../js/dashboard.js"></script>
+
+
+</body>
+
+</html>
