@@ -6,7 +6,13 @@
    For now it's filled with your current hardcoded content so
    the site behaves exactly as before, just data-driven.
    ============================================================ */
-let siteData = {};
+let siteData = {
+    console.log("Database row:", data);
+console.log("Album:", data.album_cover);
+console.log("Song:", data.song_url);
+console.log("Letter:", data.letter_bg);
+console.log("Error:", error);
+};
 
 async function loadWebsiteData() {
 
@@ -44,6 +50,14 @@ if(!slug){
             .single();
 
         if (error) throw error;
+
+        console.log("Database Row:", data);
+
+console.log("Album:", data.album_cover);
+
+console.log("Song:", data.song_url);
+
+console.log("Letter:", data.letter_bg);
 
         siteData = {
 
