@@ -6,13 +6,7 @@
    For now it's filled with your current hardcoded content so
    the site behaves exactly as before, just data-driven.
    ============================================================ */
-let siteData = {
-    console.log("Database row:", data);
-console.log("Album:", data.album_cover);
-console.log("Song:", data.song_url);
-console.log("Letter:", data.letter_bg);
-console.log("Error:", error);
-};
+let siteData = {};
 
 async function loadWebsiteData() {
 
@@ -111,20 +105,13 @@ function applySiteData() {
     if (siteData.songUrl) {
 
         const audio = document.getElementById("birthdaySong");
+const source = audio.querySelector("source");
 
-        audio.src = siteData.songUrl;
+source.src = siteData.songUrl;
 
-        audio.load();
-
+audio.load();
     }
 
-    // Letter Background
-    if (siteData.letterBg) {
-
-        document.getElementById("cardImage").src =
-            siteData.letterBg;
-
-    }
 
 }
 function launchConfetti(){
@@ -296,7 +283,7 @@ function openCard(){
 
     const cardImage = document.getElementById("cardImage");
 
-    cardImage.src = siteData.letterBg;
+    cardImage.src = "assets/open_card.png";
 
 }
 function toggleMusic(){
@@ -402,3 +389,8 @@ function resetAcceptGift(){
     `<button onclick="acceptGift()">YES</button>
      <button onclick="rejectGift()">NO</button>`;
 }
+window.addEventListener("DOMContentLoaded", () => {
+
+    loadWebsiteData();
+
+});
