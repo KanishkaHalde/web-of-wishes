@@ -67,7 +67,7 @@ function displayWebsites(websites) {
 
             <td>
                 <a
-                    href="../templates/birthday/index.html?slug=${site.slug}"
+                    href="/birthday/${site.slug}"
                     target="_blank"
                     class="link">
                     View
@@ -120,7 +120,7 @@ function displayWebsites(websites) {
 function copyLink(slug) {
 
     const link =
-`${window.location.origin}/templates/birthday/index.html?slug=${slug}`;
+`${window.location.origin}/birthday/${slug}`;
 
     navigator.clipboard.writeText(link)
 .then(() => {
@@ -138,7 +138,7 @@ function copyLink(slug) {
 function openWebsite(slug){
 
     window.open(
-        `../templates/birthday/index.html?slug=${slug}`,
+        `${window.location.origin}/birthday/${slug}`,
         "_blank"
     );
 
@@ -146,8 +146,8 @@ function openWebsite(slug){
 
 function showQR(slug){
 
-    const website =
-`${window.location.origin}/templates/birthday/index.html?slug=${slug}`;
+   const website =
+`${window.location.origin}/birthday/${slug}`;
 
     const qr =
 `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(website)}`;
