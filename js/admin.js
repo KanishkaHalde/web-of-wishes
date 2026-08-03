@@ -195,7 +195,7 @@ if (error) throw error;
 
 // Create Website Link using slug
 const websiteLink =
-`${window.location.origin}/templates/birthday/index.html?slug=${slug}`;
+`${window.location.origin}/birthday/${slug}`;
 
 console.log("Website Created:");
 console.log(websiteLink);
