@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/birthday/*"
+to = "/templates/birthday/index.html"
+status = 200
