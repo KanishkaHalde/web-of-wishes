@@ -12,17 +12,30 @@ async function loadWebsiteData() {
 
     try {
 
-        const params = new URLSearchParams(window.location.search);
+        let slug;
 
-const slug = params.get("slug");
+// If URL is /birthday/kanu
+if(window.location.pathname.startsWith("/birthday/")){
 
-        if (!id) {
+    slug = window.location.pathname.split("/").pop();
 
-            alert("Website ID not found.");
+}
+// Otherwise support old links
+else{
 
-            return;
+    const params = new URLSearchParams(window.location.search);
 
-        }
+    slug = params.get("slug");
+
+}
+
+if(!slug){
+
+    alert("Website not found.");
+
+    return;
+
+}
 
         const { data, error } = await client
             .from("birthday_websites")
@@ -58,32 +71,48 @@ const slug = params.get("slug");
 
 }
 
-function applySiteData(){
+function applySiteData() {
 
+    console.log("Album URL:", siteData.albumCoverUrl);
+    console.log("Song URL:", siteData.songUrl);
+    console.log("Letter URL:", siteData.letterBg);
 
+    // Song Title
     document.getElementById("songTitle").innerText =
         siteData.songTitle;
 
+    // Artist Name
     document.getElementById("artistName").innerText =
         siteData.artistName;
 
-    document.getElementById("albumCover").src =
-        siteData.albumCoverUrl;
+    // Album Cover
+    if (siteData.albumCoverUrl) {
 
-    document.querySelector("#birthdaySong source").src =
-        siteData.songUrl;
+        document.getElementById("albumCover").src =
+            siteData.albumCoverUrl;
 
-    document.getElementById("birthdaySong").load();
+    }
 
+    // Song
+    if (siteData.songUrl) {
+
+        const audio = document.getElementById("birthdaySong");
+
+        audio.src = siteData.songUrl;
+
+        audio.load();
+
+    }
+
+    // Letter Background
+    if (siteData.letterBg) {
+
+        document.getElementById("cardImage").src =
+            siteData.letterBg;
+
+    }
 
 }
-
-window.addEventListener("DOMContentLoaded", () => {
-
-    loadWebsiteData();
-
-});
-
 function launchConfetti(){
 
     var duration = 3000;
@@ -253,9 +282,8 @@ function openCard(){
 
     const cardImage = document.getElementById("cardImage");
 
-    cardImage.src = "assets/open_card.png";
-    /* Disable further clicks after opening */
-    
+    cardImage.src = siteData.letterBg;
+
 }
 function toggleMusic(){
 
