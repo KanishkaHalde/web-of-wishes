@@ -316,17 +316,19 @@
     z-index: 10001;
 }
 
+
 #cardImage {
     width: 900px;
     max-width: 70vw;
-    max-height: 80vh;
-    height: auto;
-    object-fit: contain;
     cursor: pointer;
     transition: 0.5s;
     pointer-events: auto;
+
     display: block;
-    margin: auto;
+    margin: 0 auto;
+
+    position: relative;
+    left: 20px;   /* Move right */
 }
 
 #cardImage:hover{
