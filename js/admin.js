@@ -10,6 +10,8 @@ const artistInput = document.getElementById("artistName");
 const coverInput = document.getElementById("cover");
 const songFile = document.getElementById("song");
 const letterBgInput = document.getElementById("letterBg");
+const openCardInput = document.getElementById("openCard");
+const musicCardInput = document.getElementById("musicCard");
 
 const previewSong = document.getElementById("previewSong");
 const previewArtist = document.getElementById("previewArtist");
@@ -101,7 +103,41 @@ async function uploadLetterBg(file) {
     return `${SUPABASE_URL}/storage/v1/object/public/letters/${fileName}`;
 
 }
+// =========================
+// Upload Open Card
+// =========================
 
+async function uploadOpenCard(file) {
+
+    const fileName = Date.now() + "_" + file.name;
+
+    const { error } = await client.storage
+        .from("open-cards")
+        .upload(fileName, file);
+
+    if (error) throw error;
+
+    return `${SUPABASE_URL}/storage/v1/object/public/open-cards/${fileName}`;
+
+}
+
+// =========================
+// Upload Music Card
+// =========================
+
+async function uploadMusicCard(file) {
+
+    const fileName = Date.now() + "_" + file.name;
+
+    const { error } = await client.storage
+        .from("music-cards")
+        .upload(fileName, file);
+
+    if (error) throw error;
+
+    return `${SUPABASE_URL}/storage/v1/object/public/music-cards/${fileName}`;
+
+}
 // =========================
 // Generate Website
 // =========================
@@ -141,7 +177,15 @@ generateBtn.addEventListener("click", async () => {
             alert("Please select a letter background.");
             return;
         }
+if (!openCardInput.files.length) {
+    alert("Please select an open card.");
+    return;
+}
 
+if (!musicCardInput.files.length) {
+    alert("Please select a music card.");
+    return;
+}
         // ✅ Create slug HERE
         const slug = slugInput.value
             .trim()
@@ -163,9 +207,13 @@ if (existing) {
         // Upload Files
         const coverURL = await uploadCover(coverInput.files[0]);
 
-        const songURL = await uploadSong(songFile.files[0]);
+const songURL = await uploadSong(songFile.files[0]);
 
-        const letterBgURL = await uploadLetterBg(letterBgInput.files[0]);
+const letterBgURL = await uploadLetterBg(letterBgInput.files[0]);
+
+const openCardURL = await uploadOpenCard(openCardInput.files[0]);
+
+const musicCardURL = await uploadMusicCard(musicCardInput.files[0]);
 
         // Save into Database
         const { data, error } = await client
@@ -182,7 +230,11 @@ if (existing) {
 
                 song_url: songURL,
 
-                letter_bg: letterBgURL
+                letter_bg: letterBgURL,
+
+                open_card: openCardURL,
+
+                music_card: musicCardURL
 
             })
             .select()

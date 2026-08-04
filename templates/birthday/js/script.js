@@ -63,7 +63,11 @@ console.log("Letter:", data.letter_bg);
 
     songUrl: data.song_url,
 
-    letterBg: data.letter_bg
+    letterBg: data.letter_bg,
+
+    openCard: data.open_card,
+
+    musicCard: data.music_card
 
 };
 
@@ -84,6 +88,8 @@ function applySiteData() {
     console.log("Album URL:", siteData.albumCoverUrl);
     console.log("Song URL:", siteData.songUrl);
     console.log("Letter URL:", siteData.letterBg);
+    console.log("Open Card:", siteData.openCard);
+    console.log("Music Card:", siteData.musicCard);
 
     // Song Title
     document.getElementById("songTitle").innerText =
@@ -95,23 +101,26 @@ function applySiteData() {
 
     // Album Cover
     if (siteData.albumCoverUrl) {
-
         document.getElementById("albumCover").src =
             siteData.albumCoverUrl;
+    }
 
+    // Music Card
+    if (siteData.musicCard) {
+        document.getElementById("musicCard").src =
+            siteData.musicCard;
     }
 
     // Song
     if (siteData.songUrl) {
 
         const audio = document.getElementById("birthdaySong");
-const source = audio.querySelector("source");
+        const source = audio.querySelector("source");
 
-source.src = siteData.songUrl;
+        source.src = siteData.songUrl;
 
-audio.load();
+        audio.load();
     }
-
 
 }
 function launchConfetti(){
@@ -283,7 +292,7 @@ function openCard(){
 
     const cardImage = document.getElementById("cardImage");
 
-    cardImage.src = "assets/open_card.png";
+    cardImage.src = siteData.openCard;
 
 }
 function toggleMusic(){
