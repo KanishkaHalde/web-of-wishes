@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Anniversary Website ❤️</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>Create Anniversary Website ❤️</h1>
+
+
+    <!-- WEBSITE URL -->
+
+    <label>Website URL Name</label>
+
+    <input
+        type="text"
+        id="slug"
+        placeholder="Example: kanu"
+    >
+
+    <p class="hint">
+        Your website link will be:
+        <br>
+        /anniversary/kanu
+    </p>
+
+
+    <!-- GIFT BACKGROUND -->
+
+    <label>Gift Background</label>
+
+    <input
+        type="file"
+        id="giftBg"
+        accept="image/*"
+    >
+
+
+    <!-- LETTER BACKGROUND -->
+
+    <label>Letter Background</label>
+
+    <input
+        type="file"
+        id="letterBg"
+        accept="image/*"
+    >
+
+
+    <!-- BOUQUET BACKGROUND -->
+
+    <label>Bouquet Background</label>
+
+    <input
+        type="file"
+        id="bouquetBg"
+        accept="image/*"
+    >
+
+
+    <!-- SONG DETAILS -->
+
+    <label>Song Name</label>
+
+    <input
+        type="text"
+        id="songName"
+        placeholder="Example: Can't Help Falling In Love"
+    >
+
+
+    <label>Artist Name</label>
+
+    <input
+        type="text"
+        id="artistName"
+        placeholder="Example: Elvis Presley"
+    >
+
+
+    <!-- ALBUM COVER -->
+
+    <label>Album Cover</label>
+
+    <input
+        type="file"
+        id="cover"
+        accept="image/*"
+    >
+
+
+    <!-- SONG -->
+
+    <label>Song MP3</label>
+
+    <input
+        type="file"
+        id="song"
+        accept="audio/*"
+    >
+
+
+    <br><br>
+
+
+    <!-- GENERATE BUTTON -->
+
+    <button id="generateBtn">
+
+        Generate Anniversary Website ❤️
+
+    </button>
+
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="/supabase/config.js"></script>
+
+
+<!-- ANNIVERSARY ADMIN SCRIPT -->
+
+<script src="../js/anniversary.js"></script>
+
+</body>
+
+</html>

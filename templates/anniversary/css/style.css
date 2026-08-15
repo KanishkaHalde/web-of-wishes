@@ -1,0 +1,815 @@
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            overflow:hidden;
+            background:#fbf7f8;
+            font-family:Georgia, serif;
+        }
+
+        .page{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    background-image:url("../assets/main_page.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+        .candle-btn{
+    position:absolute;
+    bottom:165px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:340px;
+    height:65px;
+
+    border:2px solid #2d0303;
+    border-radius:40px;
+
+    background:rgba(231, 227, 227, 0.9);
+
+    color:#540707;
+
+    font-size:22px;
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 18px rgba(79, 3, 45, 0.22);
+
+    z-index:100;
+}
+
+        .candle-btn::before{
+            content:"";
+            position:absolute;
+            inset:9px;
+            border:2px dashed #6c0946;
+            border-radius:32px;
+        }
+
+        .candle-btn span{
+            position:relative;
+            z-index:2;
+        }
+
+        .wind{
+            font-size:30px;
+            margin-right:14px;
+        }
+
+        .candle-btn:hover{
+            background:rgba(235, 184, 184, 0.95);
+        }
+
+        .gifts{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            display:none;
+            gap:80px;
+            z-index:10;
+            align-items:center;
+        }
+
+        .gift{
+            width:350px;
+            cursor:pointer;
+            transition:all 0.8s ease;
+            transform-origin:center center;
+        }
+
+        .gift:hover{
+            transform:scale(1.08);
+        }
+#giftHeading{
+    position:absolute;
+    top:7%;
+    left:50%;
+    transform:translateX(-50%);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size:50px;
+    color:#ffffff;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.12);
+    display:none;
+    z-index:20;
+    white-space:nowrap;
+}
+#acceptGiftPage{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    display:none;
+    z-index:20;
+}
+
+#acceptHeading{
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+
+    transform: perspective(500px) rotateX(12deg);
+}
+
+#acceptSticker{
+    width: 380px;   /* was 280px */
+    display:block;
+    margin:0 auto 25px;
+}
+
+#acceptButtons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+#acceptButtons button,
+#tryAgainBtn{
+    padding:14px 35px;
+    border:2px solid black;
+    border-radius:30px;
+    background:#e3c5bf;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s ease;
+}
+
+#acceptButtons button:hover,
+#tryAgainBtn:hover{
+    transform:scale(1.08);
+}
+
+#acceptButtons button:active,
+#tryAgainBtn:active{
+    transform:scale(0.92);
+}
+        /* Side Image */
+#sideImage{
+    position:fixed;
+    left:7%;
+    top:50%;
+    transform:translateY(-50%);
+    width:47vw;
+    max-height:93vh;
+    object-fit:contain;
+    z-index:9999;
+    display:none;
+}
+
+        /* Letter */
+
+         #letterText{
+            position:fixed;
+            top:20%;
+            left:50%;
+            transform:translateX(-50%);
+            width:420px;
+            text-align:center;
+            z-index:10000;
+            opacity:0;
+            pointer-events:none;
+        }
+
+        #letterText h2{
+            display: none;
+            font-family:'Great Vibes', cursive;
+            font-size:52px;
+            color:#8b4a4a;
+            white-space:nowrap;
+            margin-bottom:20px;
+        }
+
+        #typedMessage{
+            font-family:'Cormorant Garamond', serif;
+            font-size:18px;
+            line-height:1.1;
+            color:#2f1f1f;
+            white-space:pre-line;
+            width:250px;
+            margin:0 auto;
+            user-select:none;
+           -webkit-user-select:none;
+}
+
+
+        #cardContainer{
+    position:fixed;
+    right:7%;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:10000;
+}
+
+        #cardImage{
+    width: 650px;
+    max-width:70vw;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+#cardImage:hover{
+    transform:scale(1.05);
+}
+#musicSection{
+    position:fixed;
+    left:12%;
+    top:55%;
+    transform:translateY(-50%);
+    z-index:10000;
+}
+
+#musicCard{
+    width:490px;
+    display:block;
+    margin-bottom:25px;
+    margin-top:-15px;
+}
+
+#spotifyCard{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:400px;
+    background:#620d23;
+    border-radius:22px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+    z-index:15000;
+}
+
+#albumCover{
+    width:70px;
+    height:70px;
+    border-radius:12px;
+    object-fit:cover;
+}
+
+#songInfo{
+    flex:1;
+}
+
+#songTitle{
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+#artistName{
+    color:#f3d7dd;
+    font-size:14px;
+    margin-top:5px;
+}
+
+#playBtn{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    color:#721212;
+    font-size:24px;
+    cursor:pointer;
+}
+        /* Back Button */
+
+        #backBtn{
+            position:fixed;
+            top:25px;
+            left:25px;
+            padding:12px 24px;
+            border:none;
+            border-radius:30px;
+            background:white;
+            color:#8b4a4a;
+            font-size:20px;
+            font-weight:bold;
+            cursor:pointer;
+            z-index:20000;
+            display:none;
+            box-shadow:0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        #backBtn:hover{
+            transform:scale(1.05);
+        }
+        #flowerPage{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+}
+
+#flowerBg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+#flowerHeading{
+    position:absolute;
+    top:60px;
+    width:100%;
+    text-align:center;
+    font-size:48px;
+    color:#ffffff;
+    z-index:2;
+}
+#flowerSubHeading{
+    position:absolute;
+    top:125px;
+    width:100%;
+    text-align:center;
+
+    font-size:22px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;   /* Bold */
+
+    color:#e4baba;
+
+    z-index:2;
+}
+#flowerOptions{
+    position:absolute;
+    top:180px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    z-index:2;
+}
+
+.flower{
+    position:relative;
+    cursor:pointer;
+}
+
+.flower img:first-child{
+    width:320px;
+    height:auto;
+}
+.tick{
+    position:absolute;
+    width:45px;
+    bottom:10px;
+    right:10px;
+    display:none;
+}
+
+.flower.selected .tick{
+    display:block;
+}
+
+#nextFlowerBtn{
+    position:absolute;
+    bottom:60px;
+    left:50%;
+    transform:translateX(-50%);
+
+    background:#ffd8e0;
+    border:none;
+    padding:12px 35px;
+    border-radius:40px;
+    color:rgb(3, 3, 3);
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 6px 20px rgba(247, 221, 226, 0.4);
+}
+
+#nextFlowerBtn:hover{
+    background:#b76f7d;
+    transform:translateX(-50%) scale(1.08);
+}
+
+#nextFlowerBtn:active{
+    transform:translateX(-50%) scale(0.95);
+}
+
+#bouquetResult{
+    display:none;
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:500px;
+    z-index:10000;
+}    
+/* =====================================================
+   MOBILE RESPONSIVE
+   Desktop design remains unchanged
+===================================================== */
+
+
+/* =====================================================
+   PORTRAIT PHONE - ASK USER TO ROTATE
+===================================================== */
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+
+    body::before {
+        content: "📱 Please rotate your phone for the best experience ↻";
+        position: fixed;
+        inset: 0;
+
+        background: #fbf7f8;
+        color: #530808;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        padding: 30px;
+
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+
+        z-index: 999999;
+    }
+}
+
+
+/* =====================================================
+   MOBILE LANDSCAPE
+===================================================== */
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+
+
+    /* =========================
+       MAIN PAGE
+    ========================= */
+
+    .page {
+        width: 100vw;
+        height: 100vh;
+
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    /* =========================
+       CONTINUE BUTTON
+    ========================= */
+
+    .candle-btn {
+        width: 32vw;
+        height: 13vh;
+
+        bottom: 5vh;
+
+        font-size: 3.2vh;
+        letter-spacing: 1px;
+    }
+
+    .candle-btn {
+    bottom: 20vh;
+}
+
+    .wind {
+        font-size: 4.5vh;
+        margin-right: 1vw;
+    }
+
+
+    /* =========================
+       ACCEPT GIFT PAGE
+    ========================= */
+
+    #acceptGiftPage {
+        width: 100%;
+    }
+
+    #acceptHeading {
+        font-size: 7vh;
+        margin-bottom: 2vh;
+    }
+
+    #acceptSticker {
+        width: auto;
+        height: 43vh;
+        max-width: 40vw;
+
+        margin: 0 auto 3vh;
+
+        object-fit: contain;
+    }
+
+    #acceptButtons {
+        gap: 3vw;
+    }
+
+    #acceptButtons button,
+    #tryAgainBtn {
+        padding: 2vh 4vw;
+        font-size: 3vh;
+    }
+
+
+    /* =========================
+       GIFT SELECTION
+    ========================= */
+
+    #giftHeading {
+        top: 4%;
+        font-size: 7vh;
+    }
+
+    .gifts {
+        top: 53%;
+        gap: 5vw;
+    }
+
+    .gift {
+        width: 24vw;
+        max-height: 68vh;
+
+        object-fit: contain;
+    }
+
+
+    /* =========================
+       GIFT 1 - LETTER
+    ========================= */
+
+    #letterText {
+        top: 18%;
+        left: 50%;
+
+        width: 35vw;
+
+        transform: translateX(-50%);
+    }
+
+    #letterText h2 {
+        font-size: 7vh;
+        margin-bottom: 2vh;
+    }
+
+    #typedMessage {
+        width: 30vw;
+
+        font-size: 3vh;
+        line-height: 1.1;
+    }
+
+
+    /* =========================
+       GIFT 1 - MUSIC PLAYER
+    ========================= */
+
+    #spotifyCard {
+        bottom: 10vh;
+
+        width: 33vw;
+
+        padding: 2vh 2vw;
+
+        gap: 1.5vw;
+
+        border-radius: 3vh;
+    }
+
+    #albumCover {
+        width: 11vh;
+        height: 11vh;
+
+        border-radius: 2vh;
+    }
+
+    #songTitle {
+        font-size: 3vh;
+    }
+
+    #artistName {
+        font-size: 2.4vh;
+        margin-top: 1vh;
+    }
+
+    #playBtn {
+        width: 9vh;
+        height: 9vh;
+
+        font-size: 4vh;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =========================
+       GIFT 2 - FLOWER PAGE
+    ========================= */
+
+    #flowerPage {
+        width: 100vw;
+        height: 100vh;
+
+        overflow: hidden;
+    }
+
+    #flowerBg {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+    }
+
+
+    /* Flower heading */
+
+    #flowerHeading {
+        top: 4vh;
+
+        font-size: 7vh;
+        line-height: 1;
+    }
+
+
+    /* Flower subtitle */
+
+    #flowerSubHeading {
+        top: 13vh;
+
+        font-size: 3.5vh;
+    }
+
+
+    /* Flower choices */
+
+    #flowerOptions {
+        top: 23vh;
+
+        gap: 5vw;
+
+        align-items: center;
+    }
+
+    .flower {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flower img:first-child {
+        width: auto;
+        height: 50vh;
+
+        max-width: 25vw;
+
+        object-fit: contain;
+    }
+
+
+    /* Selected flower tick */
+
+    .tick {
+        width: 7vh;
+
+        right: 1vw;
+        bottom: 1vh;
+    }
+
+
+    /* Flower Next Button */
+
+    #nextFlowerBtn {
+        bottom: 3vh;
+
+        padding: 2vh 5vw;
+
+        font-size: 3vh;
+    }
+
+
+    /* =========================
+       BOUQUET RESULT
+    ========================= */
+
+    #bouquetResult {
+        width: auto;
+        height: 75vh;
+
+        max-width: 70vw;
+
+        object-fit: contain;
+
+        left: 50%;
+        top: 52%;
+
+        transform: translate(-50%, -50%);
+    }
+
+
+    /* =========================
+       GIFT 3 - CARD
+    ========================= */
+
+    #cardContainer {
+        right: 8%;
+        top: 50%;
+
+        transform: translateY(-50%);
+    }
+
+    #cardImage {
+        width: auto;
+        height: 84vh;
+
+        max-width: 60vw;
+
+        object-fit: contain;
+    }
+
+
+    /* =========================
+       MUSIC SECTION IMAGE
+    ========================= */
+
+    #musicSection {
+        left: 9%;
+        top: 51%;
+
+        transform: translateY(-50%);
+
+        pointer-events: none;
+    }
+
+    #musicCard {
+        width: auto;
+        height: 58vh;
+
+        max-width: 47vw;
+
+        object-fit: contain;
+
+        margin: 0 0 1vh 0;
+    }
+
+
+    /* =========================
+       BACK BUTTON
+    ========================= */
+
+    #backBtn {
+        top: 3vh;
+        left: 2vw;
+
+        padding: 1.8vh 2vw;
+
+        font-size: 3vh;
+
+        z-index: 50000;
+    }
+
+
+    /* =========================
+       SIDE IMAGE
+    ========================= */
+
+    #sideImage {
+        left: 5%;
+
+        width: 45vw;
+        max-height: 88vh;
+
+        object-fit: contain;
+    }
+
+}      
+    
+

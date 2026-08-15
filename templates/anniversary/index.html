@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Anniversary ❤️</title>
+
+    <!-- Important for Netlify -->
+    <base href="/templates/anniversary/">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="page" id="page">
+
+    <button class="candle-btn" id="candleBtn" onclick="changePage()">
+        <span id="btnText">💌 Continue</span>
+    </button>
+
+
+    <!-- ACCEPT GIFT SCREEN -->
+
+    <div id="acceptGiftPage" style="display:none;">
+
+        <h1 id="acceptHeading">PLEASE ACCEPT THE GIFT</h1>
+
+        <img src="assets/sticker1.png" id="acceptSticker">
+
+        <div id="acceptButtons">
+
+            <button onclick="acceptGift()">YES</button>
+
+            <button onclick="rejectGift()">NO</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- GIFTS -->
+
+    <h1 id="giftHeading">Choose Your Gifts!</h1>
+
+    <div class="gifts" id="giftsContainer">
+
+        <img
+            src="assets/gift111.png"
+            class="gift"
+            id="gift1"
+            onclick="expandGift1()"
+        >
+
+        <img
+            src="assets/gift2.png"
+            class="gift"
+            id="gift2"
+            onclick="expandGift2()"
+        >
+
+        <img
+            src="assets/gift3.png"
+            class="gift"
+            id="gift3"
+            onclick="expandGift3()"
+        >
+
+    </div>
+
+
+    <!-- SPOTIFY CARD -->
+
+    <div id="spotifyCard" style="display:none;">
+
+        <!-- Dynamic Album Cover -->
+        <img src="assets/album_cover.png" id="albumCover">
+
+        <div id="songInfo">
+
+            <!-- Dynamic Song Name -->
+            <div id="songTitle">
+                Can't Help Falling In Love
+            </div>
+
+            <!-- Dynamic Artist -->
+            <div id="artistName">
+                Elvis Presley
+            </div>
+
+        </div>
+
+        <button id="playBtn" onclick="toggleMusic()">
+            ▶
+        </button>
+
+    </div>
+
+
+    <!-- Dynamic Song -->
+
+    <audio id="birthdaySong">
+
+        <source
+            src=""
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- SIDE IMAGE -->
+
+    <img id="sideImage" src="assets/imggg.png">
+
+
+    <!-- BACK BUTTON -->
+
+    <button id="backBtn" onclick="goBack()">
+        ← Back
+    </button>
+
+
+    <!-- LETTER -->
+
+    <div id="letterText">
+
+        <h2>Happy Anniversary ❤️</h2>
+
+        <div id="typedMessage"></div>
+
+    </div>
+
+
+    <!-- FLOWER PAGE -->
+
+    <div id="flowerPage">
+
+        <img src="assets/flowerbgg.png" id="flowerBg">
+
+        <h1 id="flowerHeading">
+            Build Your Bouquet 🌸
+        </h1>
+
+        <p id="flowerSubHeading">
+            Choose your favourite flowers......
+        </p>
+
+
+        <div id="flowerOptions">
+
+            <div class="flower" data-name="rose">
+
+                <img src="assets/rose.png">
+
+                <img class="tick" src="assets/tick.png">
+
+            </div>
+
+
+            <div class="flower" data-name="lilly">
+
+                <img src="assets/lilly.png">
+
+                <img class="tick" src="assets/tick.png">
+
+            </div>
+
+
+            <div class="flower" data-name="sunflower">
+
+                <img src="assets/sunflower.png">
+
+                <img class="tick" src="assets/tick.png">
+
+            </div>
+
+        </div>
+
+
+        <button id="nextFlowerBtn">
+            Next
+        </button>
+
+    </div>
+
+
+    <!-- Dynamic Bouquet Result -->
+
+    <img id="bouquetResult">
+
+</div>
+
+
+<!-- LIBRARIES -->
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="/supabase/config.js"></script>
+
+
+<!-- ANNIVERSARY SCRIPT -->
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
