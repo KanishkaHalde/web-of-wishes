@@ -1,0 +1,619 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("assets/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: background-image 0.5s ease;
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+========================================================= */
+
+.candle-btn {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 18px 35px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    z-index: 20;
+
+    transition: 0.3s;
+}
+
+.candle-btn:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.wind {
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   ACCEPT GIFT
+========================================================= */
+
+#acceptGiftPage {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(90vw, 550px);
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.2);
+
+    z-index: 15;
+
+    transition: 0.2s;
+}
+
+#acceptHeading {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(30px, 5vw, 50px);
+
+    margin-bottom: 20px;
+
+    color: #333;
+}
+
+#acceptSticker {
+    width: min(220px, 60vw);
+
+    max-height: 260px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 10px auto 25px;
+}
+
+#acceptButtons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+#acceptButtons button {
+    padding: 12px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #fff;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.15);
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#acceptButtons button:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   GIFT HEADING
+========================================================= */
+
+#giftHeading {
+    position: absolute;
+
+    top: 10%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(40px, 7vw, 75px);
+
+    color: #333;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   GIFTS
+========================================================= */
+
+.gifts {
+    position: absolute;
+
+    left: 50%;
+    top: 52%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(15px, 4vw, 50px);
+
+    width: 90vw;
+
+    z-index: 5;
+}
+
+.gift {
+    width: clamp(100px, 20vw, 230px);
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    cursor: pointer;
+
+    transition: 0.4s ease;
+}
+
+.gift:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+#cardContainer {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90vw;
+    height: 90vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 8;
+}
+
+#cardImage {
+    width: min(700px, 80vw);
+
+    max-height: 80vh;
+
+    object-fit: contain;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+#cardImage:hover {
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   MUSIC SECTION
+========================================================= */
+
+#musicSection {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(700px, 90vw);
+
+    z-index: 10;
+
+    text-align: center;
+}
+
+#musicCard {
+    max-width: 80vw;
+    max-height: 60vh;
+
+    object-fit: contain;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   SPOTIFY CARD
+========================================================= */
+
+#spotifyCard {
+    width: min(500px, 90vw);
+
+    margin: auto;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+#albumCover {
+    width: 65px;
+    height: 65px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    flex-shrink: 0;
+}
+
+#songInfo {
+    flex: 1;
+
+    text-align: left;
+
+    overflow: hidden;
+}
+
+#songTitle {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #222;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+#artistName {
+    font-size: 14px;
+
+    color: #777;
+
+    margin-top: 3px;
+}
+
+#playBtn {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    transition: 0.3s;
+}
+
+#playBtn:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   SIDE IMAGE
+========================================================= */
+
+#sideImage {
+    display: none;
+
+    position: absolute;
+
+    right: 5%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: min(400px, 45vw);
+
+    max-height: 80vh;
+
+    object-fit: contain;
+
+    z-index: 7;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+#letterText {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(700px, 85vw);
+
+    max-height: 75vh;
+
+    padding: 30px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition: opacity 0.6s ease;
+
+    z-index: 6;
+
+    overflow-y: auto;
+}
+
+#letterText h2 {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(40px, 7vw, 75px);
+
+    color: #333;
+
+    margin-bottom: 25px;
+}
+
+#typedMessage {
+    font-family: 'Shadows Into Light', cursive;
+
+    font-size: clamp(20px, 3vw, 30px);
+
+    line-height: 1.8;
+
+    color: #333;
+
+    white-space: pre-line;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+#backBtn {
+    display: none;
+
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    z-index: 30;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #333;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+#backBtn:hover {
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        background-position: center;
+    }
+
+    #giftHeading {
+        top: 8%;
+
+        font-size: 45px;
+    }
+
+    .gifts {
+        top: 52%;
+
+        gap: 5px;
+    }
+
+    .gift {
+        width: 28vw;
+    }
+
+    #acceptGiftPage {
+        padding: 25px 18px;
+    }
+
+    #acceptHeading {
+        font-size: 35px;
+    }
+
+    #letterText {
+        width: 90vw;
+
+        padding: 20px;
+    }
+
+    #letterText h2 {
+        font-size: 45px;
+    }
+
+    #typedMessage {
+        font-size: 21px;
+    }
+
+    #spotifyCard {
+        width: 90vw;
+
+        padding: 12px;
+    }
+
+    #albumCover {
+        width: 55px;
+        height: 55px;
+    }
+
+    #songTitle {
+        font-size: 16px;
+    }
+
+    #artistName {
+        font-size: 13px;
+    }
+
+    #musicCard {
+        max-width: 85vw;
+        max-height: 45vh;
+    }
+
+    #sideImage {
+        width: 45vw;
+
+        right: 2%;
+    }
+
+    #backBtn {
+        top: 15px;
+        left: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    #giftHeading {
+        font-size: 38px;
+    }
+
+    .gift {
+        width: 29vw;
+    }
+
+    #acceptHeading {
+        font-size: 30px;
+    }
+
+    #acceptButtons button {
+        padding: 10px 20px;
+    }
+
+    #typedMessage {
+        font-size: 19px;
+    }
+
+}

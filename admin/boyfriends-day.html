@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Boyfriend's Day Website ❤️</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Create Boyfriend's Day Website ❤️</h1>
+
+
+    <!-- WEBSITE URL -->
+
+    <label>Website URL Name</label>
+
+    <input
+        type="text"
+        id="slug"
+        placeholder="Example: kanu"
+    >
+
+    <p class="hint">
+        Your website link will be:
+        <br>
+        /boyfriends-day/kanu
+    </p>
+
+
+    <!-- LETTER BACKGROUND -->
+
+    <label>Letter Background</label>
+
+    <input
+        type="file"
+        id="letterBg"
+        accept="image/*"
+    >
+
+
+    <!-- OPEN CARD -->
+
+    <label>Open Card</label>
+
+    <input
+        type="file"
+        id="openCard"
+        accept="image/*"
+    >
+
+
+    <!-- MUSIC CARD -->
+
+    <label>Music Card</label>
+
+    <input
+        type="file"
+        id="musicCard"
+        accept="image/*"
+    >
+
+
+    <!-- SONG NAME -->
+
+    <label>Song Name</label>
+
+    <input
+        type="text"
+        id="songName"
+        placeholder="Example: About You"
+    >
+
+
+    <!-- ARTIST NAME -->
+
+    <label>Artist Name</label>
+
+    <input
+        type="text"
+        id="artistName"
+        placeholder="Example: The 1975"
+    >
+
+
+    <!-- ALBUM COVER -->
+
+    <label>Album Cover</label>
+
+    <input
+        type="file"
+        id="cover"
+        accept="image/*"
+    >
+
+
+    <!-- SONG -->
+
+    <label>Song (MP3)</label>
+
+    <input
+        type="file"
+        id="song"
+        accept="audio/*"
+    >
+
+
+    <br><br>
+
+
+    <!-- GENERATE -->
+
+    <button id="generateBtn">
+
+        🚀 Generate Boyfriend's Day Website
+
+    </button>
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="/supabase/config.js"></script>
+
+
+<!-- BOYFRIEND'S DAY SCRIPT -->
+
+<script src="/js/boyfriends-day.js"></script>
+
+</body>
+
+</html>

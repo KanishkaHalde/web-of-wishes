@@ -7,3 +7,12 @@ status = 200
 from = "/anniversary/*"
 to = "/templates/anniversary/index.html"
 status = 200
+
+# =========================
+# BOYFRIEND'S DAY
+# =========================
+
+[[redirects]]
+from = "/boyfriends-day/*"
+to = "/templates/boyfriends-day/index.html"
+status = 200
