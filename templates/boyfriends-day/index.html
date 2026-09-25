@@ -14,7 +14,8 @@
     <base href="/templates/boyfriends-day/">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/templates/boyfriends-day/style.css">
+    <link rel="stylesheet"
+          href="/templates/boyfriends-day/css/style.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect"
@@ -66,7 +67,8 @@
 
         <img
             src="assets/sticker1.png"
-            id="acceptSticker">
+            id="acceptSticker"
+            alt="Gift sticker">
 
         <div id="acceptButtons">
 
@@ -100,19 +102,22 @@
             src="assets/gift11.png"
             class="gift"
             id="gift1"
-            onclick="expandGift1">
+            onclick="expandGift1()"
+            alt="Letter gift">
 
         <img
             src="assets/gift22.png"
             class="gift"
             id="gift2"
-            onclick="expandGift2()">
+            onclick="expandGift2()"
+            alt="Photo gift">
 
         <img
             src="assets/gift333.png"
             class="gift"
             id="gift3"
-            onclick="expandGift3()">
+            onclick="expandGift3()"
+            alt="Music gift">
 
     </div>
 
@@ -128,7 +133,8 @@
         <img
             id="cardImage"
             src="assets/close_card.png"
-            onclick="openCard()">
+            onclick="openCard()"
+            alt="Card">
 
     </div>
 
@@ -143,14 +149,16 @@
 
         <img
             src="assets/music_card.png"
-            id="musicCard">
+            id="musicCard"
+            alt="Music card">
 
 
         <div id="spotifyCard">
 
             <img
                 src=""
-                id="albumCover">
+                id="albumCover"
+                alt="Album cover">
 
             <div id="songInfo">
 
@@ -193,7 +201,8 @@
 
     <img
         id="sideImage"
-        src="assets/img.png">
+        src="assets/img.png"
+        alt="Decoration">
 
 
     <!-- =====================================================
@@ -257,9 +266,7 @@
      BOYFRIEND'S DAY JAVASCRIPT
 ========================================================= -->
 
-<script src="scripts.js"></script>
-
-
+<script src="js/script.js"></script>
 </body>
 
 </html>

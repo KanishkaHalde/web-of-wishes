@@ -12,23 +12,26 @@ body {
 
 body {
     overflow: hidden;
-    font-family: 'Cormorant Garamond', serif;
+    background: #fbf7f8;
+    font-family: Georgia, serif;
 }
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
 
 .page {
     width: 100vw;
     height: 100vh;
+    position: relative;
 
-    background-image: url("assets/background.png");
-    background-size: cover;
+    background-image: url("../assets/main_page.png");
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 
-    position: relative;
-
     overflow: hidden;
-
-    transition: background-image 0.5s ease;
 }
 
 
@@ -39,150 +42,56 @@ body {
 .candle-btn {
     position: absolute;
 
+    top: 75%;
     left: 50%;
-    top: 50%;
 
     transform: translate(-50%, -50%);
 
-    padding: 18px 35px;
+    width: 500px;
+    height: 70px;
 
-    border: none;
-    border-radius: 50px;
+    border: 2px solid #0b437a;
+    border-radius: 40px;
 
-    background: white;
+    background: rgba(255, 248, 248, 0.956);
 
-    color: #333;
+    color: #1E90FF;
 
-    font-size: 20px;
-    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 
     cursor: pointer;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.15);
+        0 8px 18px rgba(164, 64, 69, 0.22);
 
     z-index: 20;
-
-    transition: 0.3s;
 }
 
-.candle-btn:hover {
-    transform: translate(-50%, -50%) scale(1.05);
+.candle-btn::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border: 2px dashed #0b437a;
+    border-radius: 32px;
+}
+
+.candle-btn span {
+    position: relative;
+    z-index: 2;
 }
 
 .wind {
-    margin-right: 5px;
+    font-size: 30px;
+    margin-right: 14px;
 }
 
-
-/* =========================================================
-   ACCEPT GIFT
-========================================================= */
-
-#acceptGiftPage {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: min(90vw, 550px);
-
-    padding: 35px;
-
-    text-align: center;
-
-    background: rgba(255, 255, 255, 0.95);
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.2);
-
-    z-index: 15;
-
-    transition: 0.2s;
-}
-
-#acceptHeading {
-    font-family: 'Great Vibes', cursive;
-
-    font-size: clamp(30px, 5vw, 50px);
-
-    margin-bottom: 20px;
-
-    color: #333;
-}
-
-#acceptSticker {
-    width: min(220px, 60vw);
-
-    max-height: 260px;
-
-    object-fit: contain;
-
-    display: block;
-
-    margin: 10px auto 25px;
-}
-
-#acceptButtons {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-}
-
-#acceptButtons button {
-    padding: 12px 28px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background: #fff;
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.15);
-
-    font-size: 17px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-#acceptButtons button:hover {
-    transform: scale(1.05);
-}
-
-
-/* =========================================================
-   GIFT HEADING
-========================================================= */
-
-#giftHeading {
-    position: absolute;
-
-    top: 10%;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 90%;
-
-    text-align: center;
-
-    font-family: 'Great Vibes', cursive;
-
-    font-size: clamp(40px, 7vw, 75px);
-
-    color: #333;
-
-    z-index: 5;
+.candle-btn:hover {
+    background: rgba(230, 243, 243, 0.95);
 }
 
 
@@ -193,184 +102,126 @@ body {
 .gifts {
     position: absolute;
 
-    left: 50%;
-    top: 52%;
-
-    transform: translate(-50%, -50%);
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: clamp(15px, 4vw, 50px);
-
-    width: 90vw;
-
-    z-index: 5;
-}
-
-.gift {
-    width: clamp(100px, 20vw, 230px);
-
-    max-height: 300px;
-
-    object-fit: contain;
-
-    cursor: pointer;
-
-    transition: 0.4s ease;
-}
-
-.gift:hover {
-    transform: translateY(-10px) scale(1.05);
-}
-
-
-/* =========================================================
-   CARD
-========================================================= */
-
-#cardContainer {
-    position: absolute;
-
-    left: 50%;
     top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 90vw;
-    height: 90vh;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    z-index: 8;
-}
-
-#cardImage {
-    width: min(700px, 80vw);
-
-    max-height: 80vh;
-
-    object-fit: contain;
-
-    cursor: pointer;
-
-    transition: 0.5s;
-}
-
-#cardImage:hover {
-    transform: scale(1.02);
-}
-
-
-/* =========================================================
-   MUSIC SECTION
-========================================================= */
-
-#musicSection {
-    position: absolute;
-
     left: 50%;
-    top: 50%;
 
     transform: translate(-50%, -50%);
 
-    width: min(700px, 90vw);
+    display: none;
+
+    gap: 80px;
 
     z-index: 10;
 
-    text-align: center;
+    align-items: center;
 }
 
-#musicCard {
-    max-width: 80vw;
-    max-height: 60vh;
+.gift {
+    width: 350px;
 
-    object-fit: contain;
+    cursor: pointer;
 
-    margin-bottom: 20px;
+    transition: all 0.8s ease;
+
+    transform-origin: center center;
+}
+
+.gift:hover {
+    transform: scale(1.08);
 }
 
 
 /* =========================================================
-   SPOTIFY CARD
+   GIFT HEADING
 ========================================================= */
 
-#spotifyCard {
-    width: min(500px, 90vw);
+#giftHeading {
+    position: absolute;
 
-    margin: auto;
+    top: 7%;
+    left: 50%;
 
-    padding: 15px 20px;
+    transform: translateX(-50%);
 
-    display: flex;
+    font-family: Arial, sans-serif;
 
-    align-items: center;
+    font-weight: bold;
 
-    gap: 15px;
+    font-size: 50px;
 
-    background: rgba(255, 255, 255, 0.95);
+    color: #000000;
 
-    border-radius: 18px;
+    text-shadow:
+        2px 2px 8px rgba(0, 0, 0, 0.12);
 
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.18);
-}
+    display: none;
 
-#albumCover {
-    width: 65px;
-    height: 65px;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    flex-shrink: 0;
-}
-
-#songInfo {
-    flex: 1;
-
-    text-align: left;
-
-    overflow: hidden;
-}
-
-#songTitle {
-    font-size: 18px;
-
-    font-weight: 600;
-
-    color: #222;
+    z-index: 20;
 
     white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
 }
 
-#artistName {
-    font-size: 14px;
 
-    color: #777;
+/* =========================================================
+   ACCEPT GIFT
+========================================================= */
 
-    margin-top: 3px;
+#acceptGiftPage {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    display: none;
+
+    z-index: 20;
 }
 
-#playBtn {
-    width: 45px;
-    height: 45px;
+#acceptHeading {
+    font-family: Arial, sans-serif;
+
+    font-size: 48px;
+
+    font-weight: bold;
+
+    color: black;
+
+    margin-bottom: 20px;
+
+    transform:
+        perspective(500px)
+        rotateX(12deg);
+}
+
+#acceptSticker {
+    width: 380px;
+
+    display: block;
+
+    margin: 0 auto 25px;
+}
+
+#acceptButtons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+#acceptButtons button,
+#tryAgainBtn {
+    padding: 14px 35px;
 
     border: none;
 
-    border-radius: 50%;
+    border-radius: 30px;
 
-    background: #222;
+    background: #921229;
 
     color: white;
 
@@ -378,13 +229,17 @@ body {
 
     cursor: pointer;
 
-    flex-shrink: 0;
-
-    transition: 0.3s;
+    transition: 0.2s ease;
 }
 
-#playBtn:hover {
+#acceptButtons button:hover,
+#tryAgainBtn:hover {
     transform: scale(1.08);
+}
+
+#acceptButtons button:active,
+#tryAgainBtn:active {
+    transform: scale(0.92);
 }
 
 
@@ -393,23 +248,22 @@ body {
 ========================================================= */
 
 #sideImage {
-    display: none;
+    position: fixed;
 
-    position: absolute;
-
-    right: 5%;
-
+    left: 7%;
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: min(400px, 45vw);
+    width: 47vw;
 
-    max-height: 80vh;
+    max-height: 93vh;
 
     object-fit: contain;
 
-    z-index: 7;
+    z-index: 9999;
+
+    display: none;
 }
 
 
@@ -418,50 +272,187 @@ body {
 ========================================================= */
 
 #letterText {
-    position: absolute;
+    position: fixed;
 
+    top: 20%;
     left: 50%;
-    top: 50%;
 
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
-    width: min(700px, 85vw);
-
-    max-height: 75vh;
-
-    padding: 30px;
+    width: 420px;
 
     text-align: center;
 
+    z-index: 10000;
+
     opacity: 0;
 
-    transition: opacity 0.6s ease;
-
-    z-index: 6;
-
-    overflow-y: auto;
+    pointer-events: none;
 }
 
 #letterText h2 {
+    display: none;
+
     font-family: 'Great Vibes', cursive;
 
-    font-size: clamp(40px, 7vw, 75px);
+    font-size: 52px;
 
-    color: #333;
+    color: #8b4a4a;
 
-    margin-bottom: 25px;
+    white-space: nowrap;
+
+    margin-bottom: 20px;
 }
 
 #typedMessage {
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Cormorant Garamond', serif;
 
-    font-size: clamp(20px, 3vw, 30px);
+    font-size: 18px;
 
-    line-height: 1.8;
+    line-height: 1.1;
 
-    color: #333;
+    color: #2f1f1f;
 
     white-space: pre-line;
+
+    width: 250px;
+
+    margin: 0 auto;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+#cardContainer {
+    position: fixed;
+
+    right: 5%;
+    top: 45%;
+
+    transform: translateY(-50%);
+
+    z-index: 10001;
+}
+
+#cardImage {
+    width: 900px;
+
+    max-width: 70vw;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    pointer-events: auto;
+
+    margin-top: 20px;
+}
+
+#cardImage:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   MUSIC SECTION
+========================================================= */
+
+#musicSection {
+    position: fixed;
+
+    left: 12%;
+    top: 55%;
+
+    transform: translateY(-50%);
+
+    z-index: 20000;
+}
+
+#musicCard {
+    width: 490px;
+
+    display: block;
+
+    margin-bottom: 25px;
+    margin-top: -15px;
+}
+
+
+/* =========================================================
+   MUSIC / SPOTIFY CARD
+========================================================= */
+
+#spotifyCard {
+    width: 400px;
+
+    background: #1f3b73;
+
+    border-radius: 22px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+
+    margin-left: 40px;
+}
+
+#albumCover {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 12px;
+
+    object-fit: cover;
+}
+
+#songInfo {
+    flex: 1;
+}
+
+#songTitle {
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+#artistName {
+    color: #f3d7dd;
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+#playBtn {
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #1f3b73;
+
+    font-size: 24px;
+
+    cursor: pointer;
 }
 
 
@@ -470,131 +461,248 @@ body {
 ========================================================= */
 
 #backBtn {
-    display: none;
-
-    position: absolute;
+    position: fixed;
 
     top: 25px;
     left: 25px;
 
-    z-index: 30;
-
-    padding: 10px 20px;
+    padding: 12px 24px;
 
     border: none;
 
-    border-radius: 25px;
+    border-radius: 30px;
 
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
 
-    color: #333;
+    color: #8b4a4a;
 
-    font-size: 16px;
+    font-size: 20px;
+
+    font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.12);
+    z-index: 20000;
 
-    transition: 0.3s;
+    display: none;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 #backBtn:hover {
-    transform: translateX(-3px);
+    transform: scale(1.05);
 }
 
 
 /* =========================================================
-   MOBILE
+   MOBILE PORTRAIT
 ========================================================= */
 
-@media (max-width: 700px) {
+@media screen and (max-width: 768px) and (orientation: portrait) {
+
+    body::before {
+        content:
+            "📱 Please rotate your phone for the best experience ↻";
+
+        position: fixed;
+
+        inset: 0;
+
+        background: #fbf7f8;
+
+        color: #1f3b73;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 30px;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 22px;
+
+        font-weight: bold;
+
+        z-index: 999999;
+    }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE
+========================================================= */
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
 
     .page {
+        width: 100vw;
+        height: 100vh;
+
+        background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
     }
 
-    #giftHeading {
-        top: 8%;
 
-        font-size: 45px;
+    /* CONTINUE */
+
+    .candle-btn {
+        width: 42vw;
+        height: 14vh;
+
+        font-size: 3vh;
     }
+
+    #btnText {
+        position: relative;
+        top: -3px;
+    }
+
+
+    /* GIFTS */
 
     .gifts {
-        top: 52%;
-
-        gap: 5px;
+        gap: 5vw;
     }
 
     .gift {
-        width: 28vw;
+        width: 25vw;
+
+        max-height: 70vh;
+
+        object-fit: contain;
     }
 
-    #acceptGiftPage {
-        padding: 25px 18px;
+    #giftHeading {
+        font-size: 7vh;
     }
+
+
+    /* ACCEPT GIFT */
 
     #acceptHeading {
-        font-size: 35px;
+        font-size: 7vh;
     }
 
-    #letterText {
-        width: 90vw;
-
-        padding: 20px;
+    #acceptSticker {
+        width: auto;
+        height: 45vh;
     }
 
-    #letterText h2 {
-        font-size: 45px;
+
+    /* CARD */
+
+    #cardContainer {
+        right: 1%;
+
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        z-index: 10000;
     }
 
-    #typedMessage {
-        font-size: 21px;
+    #cardImage {
+        width: auto;
+
+        height: 78vh;
+
+        max-width: 60vw;
+
+        object-fit: contain;
+
+        pointer-events: auto;
     }
 
-    #spotifyCard {
-        width: 90vw;
 
-        padding: 12px;
-    }
+    /* MUSIC */
 
-    #albumCover {
-        width: 55px;
-        height: 55px;
-    }
+    #musicSection {
+        left: 4%;
 
-    #songTitle {
-        font-size: 16px;
-    }
+        top: 52%;
 
-    #artistName {
-        font-size: 13px;
+        transform: translateY(-50%);
+
+        z-index: 10001;
+
+        pointer-events: none;
     }
 
     #musicCard {
-        max-width: 85vw;
-        max-height: 45vh;
+        width: auto;
+
+        height: 55vh;
+
+        object-fit: contain;
     }
+
+    #spotifyCard {
+        position: relative;
+
+        width: 44vw;
+
+        margin-left: 2vw;
+
+        padding: 2vh 2vw;
+
+        z-index: 10003;
+
+        pointer-events: auto;
+    }
+
+    #playBtn {
+        position: relative;
+
+        width: 9vh;
+        height: 9vh;
+
+        font-size: 4vh;
+
+        z-index: 10004;
+
+        pointer-events: auto;
+    }
+
+
+    /* SIDE IMAGE */
 
     #sideImage {
         width: 45vw;
 
-        right: 2%;
+        max-height: 90vh;
     }
+
+
+    /* BACK BUTTON */
 
     #backBtn {
-        top: 15px;
-        left: 15px;
-    }
+        top: 3vh;
 
+        left: 2vw;
+
+        padding: 2vh 2vw;
+
+        font-size: 3vh;
+    }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   VERY SMALL SCREENS
 ========================================================= */
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
 
     #giftHeading {
         font-size: 38px;
@@ -615,5 +723,4 @@ body {
     #typedMessage {
         font-size: 19px;
     }
-
 }

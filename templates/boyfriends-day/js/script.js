@@ -6,8 +6,8 @@
 
 /* ============================================================
    GET SLUG
-   Example:
-   /boyfriends-day/kanu
+   Production example:
+   /boyfriends-day/for-piyuuu
 ============================================================ */
 
 const pathParts =
@@ -29,7 +29,7 @@ async function loadWebsite() {
 
     try {
 
-        if (!slug) {
+        if (!slug || slug === "index.html") {
             showUnavailable();
             return;
         }
@@ -95,6 +95,7 @@ async function loadWebsite() {
         const song =
             document.getElementById("birthdaySong");
 
+
         const source =
             song.querySelector("source");
 
@@ -104,18 +105,6 @@ async function loadWebsite() {
 
 
         song.load();
-
-
-        /* ====================================================
-           DYNAMIC LETTER BACKGROUND
-        ==================================================== */
-
-        if (data.letter_bg) {
-
-            document.getElementById("page").style.backgroundImage =
-                `url("${data.letter_bg}")`;
-
-        }
 
 
         /* ====================================================
@@ -303,6 +292,8 @@ function expandGift1() {
         "none";
 
 
+    /* Load letter background ONLY when Gift 1 is opened */
+
     if (
         websiteData &&
         websiteData.letter_bg
@@ -466,10 +457,11 @@ function openCard() {
             cardImage.dataset.openCard;
 
     }
+
     else {
 
         cardImage.src =
-            "assets/open_card.png";
+            "assets/close_card.png";
 
     }
 
@@ -516,6 +508,7 @@ function toggleMusic() {
             });
 
     }
+
     else {
 
         song.pause();
@@ -606,9 +599,11 @@ function goBack() {
 
             gift.removeAttribute("style");
 
-            gift.className = "gift";
+            gift.className =
+                "gift";
 
-            gift.style.display = "";
+            gift.style.display =
+                "";
 
         });
 
@@ -645,6 +640,10 @@ function acceptGift() {
 
         acceptPage.style.display =
             "none";
+
+
+        acceptPage.style.transform =
+            "translate(-50%,-50%)";
 
 
         document.getElementById("giftsContainer").style.display =
