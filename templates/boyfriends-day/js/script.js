@@ -304,10 +304,6 @@ function expandGift1() {
 
     }
 
-
-    document.getElementById("letterText").style.opacity =
-        "1";
-
 }
 
 
@@ -324,13 +320,6 @@ function expandGift2() {
     document.getElementById("backBtn").style.display =
         "block";
 
-
-    document.getElementById("letterText").style.opacity =
-        "0";
-
-
-    document.getElementById("typedMessage").innerHTML =
-        "";
 
 
     const gift2 =
@@ -584,14 +573,6 @@ function goBack() {
 
     document.getElementById("sideImage").style.display =
         "none";
-
-
-    document.getElementById("letterText").style.opacity =
-        "0";
-
-
-    document.getElementById("typedMessage").innerHTML =
-        "";
 
 
     document.querySelectorAll(".gift")
